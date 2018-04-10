@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+<body>
+    <div class="container"></div>
+
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="gridview.js"></script>
+<script>
+    var data = {
+        gridviews: [
+            {
+                tabs: {
+                    '1': { //表id
+                        label: 'content1',
+                        fields: 'content1' //该表显示字段，由datagrid控件显示
+                    },
+                    '2': {
+                        label: 'content2',
+                        fields: 'content2'
+                    },
+                    '3': {
+                        label: 'content3',
+                        fields: 'content3'
+                    },
+                    '4': {
+                        label: 'content4',
+                        fields: 'content4'
+                    }
+                },
+                weight: 4
+            },
+            {
+                tabs: {
+                    '5': {
+                        label: 'content5',
+                        fields: 'content5'
+                    },
+                    '6': {
+                        label: 'content6',
+                        fields: 'content6'
+                    },
+                    '7': {
+                        label: 'content7',
+                        fields: 'content7'
+                    },
+                },
+                weight: 3
+            },
+            {
+                tabs: {
+                    '8': {
+                        label: 'content8',
+                        fields: 'content8'
+                    }
+                },
+                weight: 1
+            }
+        ]
+    }
+
+    $('.container').gridview({
+        data: data,
+        onBuild: function (tab) {
+            return `<p>${tab.label}</p>`;
+        }
+    })
+</script>
+</body>
+</html>
